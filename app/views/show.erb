@@ -1,15 +1,15 @@
-<!DOCTYPE html>
-<html>
-  <body>
-    <h1><%= @recipe.name %></h1>
-    <h4>Ingredients</h4>
-    <p><%= @recipe.ingredients %></p>
-    <p><u>Cook Time:</u> <%= @recipe.cook_time %></p>
+  
+<h1><%=@recipes.name %></h1>
+<h3><%= @recipes.ingredients %></h3>
+<h4><%= @recipes.cook_time %></h4>
+<!-- <form action="/recipes/<%= @recipes.id %>/delete" method="post">
+  <input id="hidden" type="hidden" name="_method" value="delete">
+  <input type="delete" name="delete" value="delete">
+  <button type="delete" name="delete" value="delete">
+</form> -->
 
-    <form action="/recipes/<%= @recipe.id %>/delete" method="post">
-      <input id="hidden" type="hidden" name="_method" value="delete">
-      <input type="submit" value="delete">
-    </form>
+<form method="post" action="/recipes/<%=@recipes.id%>/delete">
+    <input id="hidden" type="hidden" name="_method" value="delete">
 
-  </body>
-</html>
+  <input type="submit" value="delete">
+</form>
